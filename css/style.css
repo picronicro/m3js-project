@@ -2,7 +2,8 @@
 
 .header {
     height: 80px;
-    background: #2c2d2f;
+    background: #282b30;
+    box-shadow: 0 0 10px black;
     display: flex;
     align-items: center;
     width: 100%;
@@ -55,7 +56,6 @@
 
 .main_block {
     padding: 100px 0;
-    background: black;
 }
 
 /* BUTTONS COLOR PICKER */
@@ -74,7 +74,8 @@
 /* FOOTER */
 
 .footer {
-    background: #2c2d2f;
+    background: #282b30;
+    box-shadow: 0 0 10px black;
     width: 100%;
 }
 
@@ -96,7 +97,6 @@
 
 .slider_block {
     padding: 100px 0;
-    background: black;
 }
 
 .slider {
@@ -153,7 +153,6 @@
 /* VIDEO BLOCK */
 
 .block_video {
-    background: black;
     padding: 100px 0;
 }
 

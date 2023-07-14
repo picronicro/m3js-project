@@ -14,17 +14,37 @@ btnValidate.addEventListener("click", () => {
 
 // recursion
 const block = document.querySelector(".child_block")
+let delay = 1
+
 let left = 0
+let topp = 0
 
 async function moveBlock() {
-    block.style.left = left + "px"
-    left++
+    if (left <= 446 && topp === 0) {
+        block.style.left = left + "px"
+        left++
 
-    if (block.style.left !== "446px") {
-        await new Promise(r => setTimeout(r, 15))
-        console.log("fin")
-        moveBlock()
+        await new Promise(r => setTimeout(r, delay))
+    } else if (topp <= 446 && left === 447) {
+        block.style.top = topp + "px"
+        topp++
+
+        await new Promise(r => setTimeout(r, delay))
+    } else if (left <= 447 && left !== 0 && topp === 447) {
+        block.style.left = left + "px"
+        left--
+
+        await new Promise(r => setTimeout(r, delay))
+    } else {
+        block.style.top = topp + "px"
+        topp--
+
+        await new Promise(r => setTimeout(r, delay))
     }
+
+    console.log(left + " " + topp)
+
+    moveBlock()
 }
 
 moveBlock()
