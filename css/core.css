@@ -12,6 +12,8 @@
 body {
     font-family: "Britannic Bold", sans-serif;
     background: #36393e;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 .btn {
@@ -20,16 +22,22 @@ body {
     font-size: 20px;
     cursor: pointer;
     border: 1px solid orange;
+    border-radius: 10px;
     color: orange;
+    transition: .2s;
 }
 
 .btn:hover {
     background: #414349;
+    transform: scale(1.02);
+    transition: .2s;
 }
 
 .btn:active {
+    transform: scale(.95);
     background: #56585D;
-    border: 2px solid orange;
+    border: 3px solid orange;
+    transition: .1s;
 }
 
 a {
@@ -89,7 +97,15 @@ input {
     font-size: 20px;
     padding-left: 5px;
     color: orange;
-    border: 2px solid orange;
+    border: 1px solid orange;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+input:focus {
+    outline: none !important;
+    border: 3px solid orange;
+    transition: .2s;
 }
 
 .checker {
@@ -105,14 +121,34 @@ input {
     color: black;
     font-size: 20px;
     text-transform: uppercase;
+    border: none;
     border-radius: 50%;
     font-weight: 800;
     z-index: 1;
+    transition: .2s;
 }
 
 .btn-slide:hover {
     background: #b68733 !important;
     cursor: pointer;
     color: white;
+}
+
+.btn-left:hover {
+    transform: translateX(10px);
+    transition: .2s;
+}
+.btn-left:active {
+    transform: translateX(-15px);
+    transition: .1s;
+}
+
+.btn-right:hover {
+    transform: translateX(-10px);
+    transition: .2s;
+}
+.btn-right:active {
+    transform: translateX(15px);
+    transition: .1s;
 }
 

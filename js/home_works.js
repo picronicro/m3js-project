@@ -42,8 +42,6 @@ async function moveBlock() {
         await new Promise(r => setTimeout(r, delay))
     }
 
-    console.log(left + " " + topp)
-
     moveBlock()
 }
 

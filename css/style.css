@@ -31,9 +31,17 @@
     background: orange;
     padding: 8px;
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: .1s;
 }
+
+.logotype:hover {
+    transform: scale(1.02);
+    transition: .1s;
+}
+
+
 
 /* HEADER MENU */
 
@@ -48,8 +56,13 @@
     text-transform: uppercase;
 }
 
-.menu_link a:hover {
-    text-decoration: underline;
+.menu_link {
+    transition: .2s;
+}
+
+.menu_link:hover {
+    transform: scale(1.1);
+    transition: .2s;
 }
 
 /* MAIN BLOCK */
@@ -171,8 +184,10 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     display: none;
+    transition: 1s;
 }
 
 .modal_dialog {
@@ -184,8 +199,8 @@
     position: relative;
     width: 100%;
     padding: 40px;
-    background-color: black;
-    border: 2px solid orange;
+    background-color: #282b30;
+    border: 2px solid #22242a;
     border-radius: 4px;
     max-height: 80vh;
     overflow-y: auto;
