@@ -74,3 +74,39 @@ tabsParent.onclick = event => {
         })
     }
 }
+
+// converter
+const kgs = document.querySelector("#kgs")
+const usd = document.querySelector("#usd")
+const eur = document.querySelector("#eur")
+
+function convert(from) {
+    from.oninput = () => {
+        const request = new XMLHttpRequest()
+        request.open("GET", "../data/exchange_rates.json")
+        request.setRequestHeader("Content-type", "application/json")
+        request.send()
+        request.addEventListener("load", () => {
+            const response = JSON.parse(request.response)
+
+            switch (from) {
+                case kgs:
+                    usd.value = (kgs.value / response.usd).toFixed(1)
+                    eur.value = (kgs.value / response.eur).toFixed(1)
+                    break
+                case usd:
+                    kgs.value = (usd.value * response.usd).toFixed(1)
+                    eur.value = (kgs.value / response.eur).toFixed(1)
+                    break
+                case eur:
+                    kgs.value = (eur.value * response.eur).toFixed(1)
+                    usd.value = (kgs.value / response.usd).toFixed(1)
+                    break
+            }
+        })
+    }
+}
+
+convert(kgs)
+convert(usd)
+convert(eur)
