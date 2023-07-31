@@ -105,12 +105,14 @@
     width: 500px;
     height: 150px;
     border: 1px solid #F79300;
+    border-radius: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 10px;
+    transition: .2s;
 }
 
 .card p {
@@ -128,6 +130,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* card states */
+.card_true {
+    box-shadow: 0 0 30px limegreen;
+    transition: .2s;
+}
+
+.card_false {
+    box-shadow: 0 0 30px red;
+    transition: .2s;
 }
 
 /* exchange rates */

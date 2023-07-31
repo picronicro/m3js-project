@@ -75,6 +75,55 @@ tabsParent.onclick = event => {
     }
 }
 
+// card switcher
+const btnPrev = document.querySelector("#btn-prev")
+const btnNext = document.querySelector("#btn-next")
+const card = document.querySelector(".card")
+
+function getData(cardID) {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${cardID}`)
+        .then(response => response.json())
+        .then(json => {
+            card.innerHTML = `
+                <p>${json.title}</p>
+                <span>${json.id}</span>
+            `
+
+            card.classList.remove("card_true", "card_false")
+            if (json.completed) {
+                card.classList.add("card_true")
+            } else {
+                card.classList.add("card_false")
+            }
+        })
+}
+
+// request
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+let current = 1
+btnPrev.onclick = () => {
+    current --
+    if (current < 1) {
+        current = 200
+    }
+
+    getData(current)
+}
+btnNext.onclick = () => {
+    current ++
+    if (current > 200) {
+        current = 1
+    }
+
+    getData(current)
+}
+
+getData(current)
+
+
 // converter
 const kgs = document.querySelector("#kgs")
 const usd = document.querySelector("#usd")
